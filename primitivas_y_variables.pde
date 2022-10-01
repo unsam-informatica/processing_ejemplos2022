@@ -1,13 +1,12 @@
 size(800,800);
 strokeWeight(5);
 
-// declaración de variables
+// declaración de variables globales
 float centroX=width*0.5; // canvas de 800, centro del canvas/lienzo en 400
 float centroY=height*0.5; // canvas de 800, centro del canvas/lienzo en 400
 float margenInf=100;
 
-// punto y linea sobre plano
-
+// PUNTO Y LINEA SOBRE PLANO
 stroke(255,0,0);
 point(centroX,(height*0.25));
 point(centroX,(height*0.75));
@@ -17,8 +16,7 @@ stroke(0,0,255);
 line(0,height-margenInf,width,height-margenInf);
 
 
-// elipses
-
+// ELIPSES
 // elipse roja
 fill(255,0,0,127);
 ellipseMode(CENTER); // x, y se ubican en el centro de la elipse
@@ -33,8 +31,7 @@ ellipseMode(CORNERS); // x1, y1 se ubican en la esquina inferior derecha / x2, y
 ellipse(centroX,centroY,50,50); // x1, y1, x2, y2
 
 
-// rectángulos
-
+// RECTÁNGULOS
 // rectángulo rojo
 fill(255,0,0,127);
 rectMode(CORNER); // x, y se ubican en la esquina superior izquierda del rectángulo
