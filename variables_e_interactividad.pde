@@ -6,7 +6,6 @@ float x;
 float y;
 float easing = 0.05;
 int lineaY;
-boolean fondo = true;
 
 // setup: se ejecuta al comienzo de la ejecución y solo una vez
 void setup(){
@@ -20,10 +19,14 @@ void setup(){
 // draw: se ejecuta constantemente, desde la primera linea a la última y comienza nuevamente (por defecto 60 cuadros por segundo)
 void draw(){
   
-  if(fondo){
+  if ((keyPressed == true) && (key == ENTER)) {
+    fill(255, 20);
+    rectMode(CORNER);
+    rect(0, 0, 800, 800);
+  }else{
     background(255);
   }
-  
+   
   // grilla de puntos
   for(int i=0; i <= width ; i+=espaciado){
     for(int a=0; a <= height ; a+=espaciado){
@@ -55,6 +58,7 @@ void draw(){
   float dy = mouseY - y;
   y += dy * easing;
   ellipse(x, y, 20, 20);
+  
 }
 
 // mousePressed: se ejecuta únicamente ante el click del usuario
@@ -65,13 +69,3 @@ void mousePressed(){
   
 }
 
-// keyPressed: se ejecuta únicamente ante la presión de una tecla
-void keyPressed(){
-  
-  if(key==ENTER){ // cuando se apreta una tecla chequea si esa letra es ENTER y ejecuta el código entre corchetes
-    fondo=false;
-  }else{ // en caso contrario ejecuta el siguiente código
-    fondo=true;
-  }
-  
-}
